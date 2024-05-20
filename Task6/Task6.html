@@ -1,0 +1,140 @@
+## Task6
+<html>
+
+<head>
+<title>Task6</title>
+
+<script>
+
+
+  function start(){
+    
+    var Button1 = document.getElementById("button1");
+    var Button2 = document.getElementById("button2");
+    var Button3 = document.getElementById("button3");
+    var Button4 = document.getElementById("button4");
+    var Button5 = document.getElementById("button5");
+    
+    Button1.addEventListener("click",removeDivisiedByThree,false);
+    Button2.addEventListener("click",addNumbers,false);
+    Button3.addEventListener("click",addThree,false);
+    Button4.addEventListener("click",printRange,false);
+    Button5.addEventListener("click",ShuffleAndSort,false);
+
+    
+ 
+ 
+  }
+
+  function makearray(){
+    var array = [];
+    for (var i = 0; i < 100; i++) 
+    {
+    var a = Math.floor(Math.random() * 100);
+    array[i] = a;
+    }
+
+    return array;
+    }
+  
+
+  function removeDivisiedByThree(){
+    
+    var nums = makearray();
+    var filterednums = [];
+    
+    for (var i = 0; i < nums.length; i++) {
+        if (nums[i] % 3 !== 0) {
+          filterednums.push(nums[i]);
+        }
+    }
+    
+    console.log(filterednums);
+   
+  }
+  
+  function addNumbers(){
+
+    var nums = makearray();
+
+    for(var i = 0 ;i<nums.length;i++){
+      var a = Math.floor(Math.random() * 51) + 100;
+      nums[i] += a;
+    }
+
+    console.log(nums);
+
+
+  }
+  
+  function addThree(){
+    var nums = makearray();
+    
+    for(var i = 0 ;i<nums.length;i++){
+      nums[i] += 3;
+    }
+
+    
+    console.log(nums);
+  }
+  
+  function printRange(){
+    var nums = makearray();
+    var filterednums = [];
+    
+    for(var i = 19 ;i<39;i++){
+      filterednums.push(nums[i]);
+    }
+    
+    console.log(filterednums);
+
+  }
+  
+  function ShuffleAndSort(){
+
+    var nums = makearray();
+    shuffleArray(nums);
+    console.log(nums);
+    nums.sort(compareDescending);
+    console.log(nums);
+    }
+
+    
+  
+  
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function compareDescending(a, b) {
+    return b - a; 
+}
+
+
+
+window.addEventListener("click",start,false);
+
+</script>
+
+</head>
+
+<body>
+
+<input type="button" id = "button1" value ="Button one">
+<input type="button" id = "button2" value ="Button two">
+<input type="button" id = "button3" value ="Button three">
+<input type="button" id = "button4" value ="Button four">
+<input type="button" id = "button5" value ="Button five">
+
+ <div id="result"></div>
+
+</body>
+
+
+
+
+
+</html>
