@@ -13,7 +13,16 @@ function start(){
 }
 
 function doit(){
-    console.log("Hello World");
+    var sum = 0;
+    var nums = [];
+
+    for(var i = 0;i<100;i++){
+        nums[i] = i;
+        sum += nums[i];
+    }
+ 
+    console.log(sum);
+
 }
 
 window.addEventListener("click",start,false);
