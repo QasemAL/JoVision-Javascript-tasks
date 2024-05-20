@@ -1,0 +1,47 @@
+## Task5
+<html>
+
+<head>
+<title>Task5</title>
+
+<script>
+
+
+function start(){
+   var button = document.getElementById("button1");
+    button.addEventListener("click",doit,false);
+}
+
+function doit(){
+    var sum = 0;
+    var nums = [];
+
+    
+    for (var i = 0; i < 100; i++) {
+  var a = Math.floor(Math.random() * 100);
+   nums[i] = a;
+   if(nums[i] %2 == 0)
+   sum+=nums[i];
+  }
+ 
+    console.log(sum);
+
+}
+
+window.addEventListener("click",start,false);
+
+</script>
+
+</head>
+
+<body>
+
+<input type="button" id = "button1" value ="click me">
+
+</body>
+
+
+
+
+
+</html>
