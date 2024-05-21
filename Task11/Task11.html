@@ -1,0 +1,50 @@
+## Task11
+<html>
+
+<head>
+    <title>Task11</title>
+
+    <script>
+
+   function Start(){
+   var button = document.getElementById("GetIP");
+   button.addEventListener("click",fetchIP,false);
+   }
+
+   function fetchIP(){
+
+
+    fetch('https://api.ipify.orgx') 
+    .then((response) => response.text())
+    .then((data) =>{
+        document.getElementById("GetIP").setAttribute("value", data);
+    } )
+    .catch(error => {
+        window.alert("You Just Wrong");
+    })
+   
+
+    
+   }
+
+
+      
+   window.addEventListener("load",Start,false);        
+    </script>
+
+</head>
+
+<body>
+
+    <input type ="button" id = "GetIP" value="GetIP">
+     
+
+</body>
+
+</html>
+
+
+
+
+
+</html>
