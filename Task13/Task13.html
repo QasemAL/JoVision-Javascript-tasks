@@ -1,0 +1,66 @@
+## Task13
+<html>
+
+<head>
+    <title>Task13</title>
+
+   
+
+</head>
+
+<body>
+
+   <form id ="myform">
+
+    <label >Name:</label><br>
+    <input type="text" id="name" placeholder="Name"><br>
+    <button type="button" onclick="submitForm()">Submit</button>
+
+   </form>
+     
+
+</body>
+
+
+
+<script> 
+
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+    this.timestamp = new Date().toLocaleString();
+  }
+
+}
+
+
+ function submitForm() {
+
+  var person = new Person();
+  
+  person.name = document.getElementById("name").value;
+
+  var link = "https://api.agify.io/?name="+person.name;
+
+   fetch(link)
+   .then(Response => Response.json())
+   .then(data => {
+    window.alert( "Your name is: "+person.name+"\n Your age is: "+ data.age + "\n " + person.timestamp);
+   })
+   .catch(error => {
+    window.alert("cant catch anything");
+   })
+
+
+  
+ 
+
+  
+  }
+
+     </script>
+
+</html>
+
+
